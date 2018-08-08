@@ -10,9 +10,10 @@ from urllib.request import urlopen,Request,build_opener,urlretrieve,install_open
 from bs4 import BeautifulSoup
 import os
 download_base_url = "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-"
-downloadDirectory = "/home/greyfather/Picture"
+downloadDirectory = "E:\p"
 
-def getHTML(basehtml,i,types):
+
+def gethtml(basehtml, i, types):
     opener = build_opener()
     opener.addheaders = [('User-Agent',
                           'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36')]
@@ -32,9 +33,10 @@ def getHTML(basehtml,i,types):
         except HTTPError:
             print("页面未找到")
 
-def getDownloadPath(baseUrl, absoluteUrl, downloadDirectory):
-    path = absoluteUrl.replace("www.","")
-    path = path.replace(baseUrl,"")
+
+def getDownloadPath(baseurl, absoluteurl, downloaddirectory):
+    path = absoluteurl.replace("www.","")
+    path = path.replace(baseurl,"")
     path = downloadDirectory+path
     directory = os.path.dirname(path)
     if not os.path.exists(directory):
@@ -42,18 +44,18 @@ def getDownloadPath(baseUrl, absoluteUrl, downloadDirectory):
 
     return path
 
+
 basehtml = "https://alpha.wallhaven.cc"
 downloadHtml = "https://wallpapers.wallhaven.cc"
 
 print("请选择类型:")
 print("1.最新 2.榜单")
 m = input()
-print(type(m))
 if m == str(1):
     types = "/latest"
 else:
     types = "/toplist"
 n = input("请选择页数:")
 for i in range(int(n)):
-    getHTML(basehtml,i+1,types)
+    gethtml(basehtml, i+1, types)
 
