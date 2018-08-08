@@ -17,6 +17,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spider import CrawlSpider, Rule
 
 from ..items import WallhavenSpdierItem
+from ..config import PAGE_NUMBER
 
 
 class Spider(CrawlSpider):
@@ -26,7 +27,7 @@ class Spider(CrawlSpider):
     # start_urls = ['https://alpha.wallhaven.cc/latest?page=1']
 
     def start_requests(self):
-        for i in range(1, 11):
+        for i in range(1, PAGE_NUMBER+1):
             yield Request(self.bash_url + str(i))
             # self.start_urls.append(self.bash_url + str(i))
 
