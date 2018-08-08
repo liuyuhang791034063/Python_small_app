@@ -13,3 +13,6 @@ __author__ = 'God'
 
 # 爬取页数
 PAGE_NUMBER = 10
+
+# 过滤标签
+BAN_TAGS = ['women', 'lips', 'bed']

@@ -7,8 +7,6 @@
 
 from scrapy import Request
 from scrapy.pipelines.images import ImagesPipeline
-from scrapy.exceptions import DropItem
-import re
 
 
 class WallhavenSpdierPipeline(ImagesPipeline):
@@ -26,4 +24,7 @@ class WallhavenSpdierPipeline(ImagesPipeline):
         :return:
         """
         img_url = item['url']
+        if not img_url:
+            return
         yield Request(img_url, meta={'item': item})
+

@@ -90,9 +90,10 @@ ITEM_PIPELINES = {
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 
+# Image配置
 IMAGES_EXPIRES = 30
 IMAGES_STORE = 'E:\p\\'
-IMAGES_THUMES = {
-    'small': (50, 50),
-    'big': (270, 270)
-}
+# IMAGES_THUMBS = {
+#     'small': (50, 50),
+#     'big': (270, 270)
+# }
