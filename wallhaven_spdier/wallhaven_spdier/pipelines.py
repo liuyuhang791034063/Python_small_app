@@ -24,7 +24,7 @@ class WallhavenSpdierPipeline(ImagesPipeline):
         :return:
         """
         img_url = item['url']
-        if not img_url or img_url == 0:
+        if img_url == 0:
             return
         yield Request(img_url, meta={'item': item})
 
