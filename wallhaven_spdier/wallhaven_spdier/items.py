@@ -13,4 +13,3 @@ class WallhavenSpdierItem(scrapy.Item):
     name = scrapy.Field()
     url = scrapy.Field()
     type = scrapy.Field()
-    pass

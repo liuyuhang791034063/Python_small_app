@@ -24,12 +24,10 @@ class Spider(CrawlSpider):
     name = 'wallhaven'
     allowed_domains = ['alpha.wallhaven.cc']
     bash_url = 'https://alpha.wallhaven.cc/latest?page='
-    # start_urls = ['https://alpha.wallhaven.cc/latest?page=1']
 
     def start_requests(self):
         for i in range(1, PAGE_NUMBER+1):
             yield Request(self.bash_url + str(i))
-            # self.start_urls.append(self.bash_url + str(i))
 
     rules = (
         Rule(LinkExtractor(allow=('https://alpha.wallhaven.cc/wallpaper/\d{1,6}',)), callback='parse_item'),

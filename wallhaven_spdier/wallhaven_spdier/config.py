@@ -11,5 +11,5 @@
 """
 __author__ = 'God'
 
-
+# 爬取页数
 PAGE_NUMBER = 10
