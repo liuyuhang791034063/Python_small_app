@@ -12,9 +12,10 @@
 __author__ = 'God'
 
 
-from scrapy.spider import CrawlSpider, Rule
 from scrapy import Request
 from scrapy.linkextractors import LinkExtractor
+from scrapy.spider import CrawlSpider, Rule
+
 from ..items import WallhavenSpdierItem
 
 
@@ -44,3 +45,5 @@ class Spider(CrawlSpider):
         item['name'] = item['url'].split('/')[-1].split('.')[0]
         item['type'] = item['url'].split('/')[-1].split('.')[1]
         yield item
+
+
