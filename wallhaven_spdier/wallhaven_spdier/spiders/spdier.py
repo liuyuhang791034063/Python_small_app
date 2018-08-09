@@ -11,7 +11,6 @@
 """
 __author__ = 'God'
 
-
 from scrapy import Request
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spider import CrawlSpider, Rule
@@ -26,7 +25,7 @@ class Spider(CrawlSpider):
     bash_url = 'https://alpha.wallhaven.cc/latest?page='
 
     def start_requests(self):
-        for i in range(1, PAGE_NUMBER+1):
+        for i in range(1, PAGE_NUMBER + 1):
             yield Request(self.bash_url + str(i))
 
     rules = (
@@ -44,5 +43,4 @@ class Spider(CrawlSpider):
         item['name'] = item['url'].split('/')[-1].split('.')[0]
         item['type'] = item['url'].split('/')[-1].split('.')[1]
         yield item
-
 
