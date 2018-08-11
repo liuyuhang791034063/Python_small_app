@@ -51,14 +51,6 @@ class WallhavenSpdierPipeline(ImagesPipeline):
 #         headers = {
 #             'User-Agent': agent
 #         }
-#         # headers = [('User-Agent', agent)]
-#         # opener = request.build_opener()
-#         # opener.addheaders = headers
-#         # request.install_opener(opener)
-#         # try:
-#         #     request.urlretrieve(url, filepath)
-#         # except Exception as e:
-#         #     print(e)
 #         fp = open(filepath, 'wb')
 #         image = requests.get(url, headers=headers).content
 #         fp.write(image)

@@ -22,7 +22,7 @@ from ..config import PAGE_NUMBER, BAN_TAGS
 class Spider(CrawlSpider):
     name = 'wallhaven'
     allowed_domains = ['alpha.wallhaven.cc']
-    bash_url = 'https://alpha.wallhaven.cc/latest?page='
+    bash_url = 'https://alpha.wallhaven.cc/random?page='
 
     def start_requests(self):
         for i in range(1, PAGE_NUMBER + 1):
