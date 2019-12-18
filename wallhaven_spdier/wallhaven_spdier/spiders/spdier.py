@@ -20,6 +20,7 @@ from ..config import PAGE_NUMBER, BAN_TAGS
 
 
 class Spider(CrawlSpider):
+    # todo solve 429 http status code question.
     name = 'wallhaven'
     allowed_domains = ['wallhaven.cc']
     bash_url = 'https://wallhaven.cc/latest?page='
